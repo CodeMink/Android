@@ -1,30 +1,21 @@
 package com.example.guessthatanagram;
 
-import com.example.*;
-
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
+import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
+import android.support.v4.app.NavUtils;
+import android.annotation.TargetApi;
+import android.os.Build;
 
-public class Game extends Activity {
-	
-	public final static String MESS = "YA UM THIS IS IT";
-	
+public class Calculate extends Activity {
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_game);
+		setContentView(R.layout.activity_calculate);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
-		
 	}
 
 	/**
@@ -40,7 +31,7 @@ public class Game extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.game, menu);
+		getMenuInflater().inflate(R.menu.calculate, menu);
 		return true;
 	}
 
@@ -59,16 +50,6 @@ public class Game extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-	
-	public void startCalcAct(View view)
-	{
-		Intent intent = new Intent(this, Calculate.class);
-		
-		EditText editText = (EditText) findViewById(R.id.letters);
-		String w = editText.getText().toString();
-		
-		intent.putExtra(MESS, w);
 	}
 
 }

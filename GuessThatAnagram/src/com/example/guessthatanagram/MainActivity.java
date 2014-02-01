@@ -16,7 +16,7 @@ import android.view.View;
 
 public class MainActivity extends Activity{
 	
-	public static final Set<String> DICTIONARY = new TreeSet<String> ();
+	public static final Trie DICTIONARY = new Trie();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){

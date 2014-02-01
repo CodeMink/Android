@@ -4,23 +4,55 @@ import java.util.ArrayList;
 
 public class Trie {
 	
-	public static void main(String[] args)
+	//sorts strings efficiently
+	private leaf head = new leaf();
+	public Trie()
 	{
-		CharSequence c = new String("dfs");
-		System.out.println("asdf".contains(c));
+		
 	}
 	
-	//sorts strings efficiently
-//	private ArrayList<Character> begin;
-//	public Trie()
-//	{
-//		
-//	}
-//	
-//	
-//	private class leaf
-//	{
-//		public leaf(char val, )
-//	}
+	public void add(String s)
+	{
+		leaf hold = head;
+		for(int i = 0; i < s.length(); i++)
+		{
+			char c = s.charAt(i);
+			
+			if(hold.branches[c - 'a'] == null)
+				hold.branches[c - 'a'] = new leaf();
+			
+			hold = hold.branches[c - 'a'];
+		}
+		
+		hold.isWord = true;
+	}
+	
+	public boolean contains(String s)
+	{
+		leaf hold = head;
+		
+		for(int i = 0; i < s.length(); i++)
+		{
+			char c = s.charAt(i);
+			
+			if(hold.branches[c - 'a'] == null)
+				return false;
+			
+			hold = hold.branches[c - 'a'];
+		}
+		
+		return true;
+	}
+	
+	
+	private class leaf
+	{
+		public leaf[] branches = new leaf[26];
+		public boolean isWord = false;
+		public leaf()
+		{
+			
+		}
+	}
 
 }

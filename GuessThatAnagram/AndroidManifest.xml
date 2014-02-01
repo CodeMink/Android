@@ -30,6 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guessthatamalgram.MainActivity" />
         </activity>
+        <activity
+            android:name="com.example.guessthatanagram.Calculate"
+            android:label="@string/title_activity_calculate"
+            android:parentActivityName="com.ahhh.myfirstapp.Game" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ahhh.myfirstapp.Game" />
+        </activity>
     </application>
 
 </manifest>
