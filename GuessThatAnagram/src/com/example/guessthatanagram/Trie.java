@@ -1,6 +1,7 @@
 package com.example.guessthatanagram;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Trie {
 	
@@ -18,10 +19,10 @@ public class Trie {
 		{
 			char c = s.charAt(i);
 			
-			if(hold.branches[c - 'a'] == null)
-				hold.branches[c - 'a'] = new leaf();
+			if(!hold.branches.containsKey(c))
+				hold.branches.put(c, new leaf());
 			
-			hold = hold.branches[c - 'a'];
+			hold = hold.branches.get(c);
 		}
 		
 		hold.isWord = true;
@@ -35,21 +36,21 @@ public class Trie {
 		{
 			char c = s.charAt(i);
 			
-			if(hold.branches[c - 'a'] == null)
+			if(!hold.branches.containsKey(c))
 				return false;
 			
-			hold = hold.branches[c - 'a'];
+			hold = hold.branches.get(c);
 		}
 		
-		return true;
+		return hold.isWord;
 	}
 	
 	
 	private class leaf
 	{
-		public leaf[] branches = new leaf[26];
+		public Map<Character, leaf> branches = new HashMap<Character, leaf>();
 		public boolean isWord = false;
-		public leaf()
+		public leaf() 
 		{
 			
 		}

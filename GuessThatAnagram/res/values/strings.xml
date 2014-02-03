@@ -6,7 +6,7 @@
     <string name="hello_world">It\'s loading, you filthy cheater</string>
     <string name="start">START</string>
     <string name="title_activity_game">Game</string>
-    <string name="enter_letters">Enter the letters you have + 1 on board</string>
+    <string name="enter_letters">Enter the letters</string>
     <string name="title_activity_calculate">Calculating</string>
 
 </resources>

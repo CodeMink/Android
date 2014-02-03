@@ -1,6 +1,6 @@
 package com.example.guessthatanagram;
 
-import com.example.*;
+import com.example.guessthatanagram.R;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
