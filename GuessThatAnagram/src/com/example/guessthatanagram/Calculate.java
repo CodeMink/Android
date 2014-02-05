@@ -16,6 +16,8 @@ public class Calculate extends Activity {
 		setContentView(R.layout.activity_calculate);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		
 	}
 
 	/**
