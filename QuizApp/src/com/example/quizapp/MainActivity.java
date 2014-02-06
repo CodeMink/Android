@@ -50,39 +50,44 @@ public class MainActivity extends Activity {
 	
 	public void testResults(View view)
 	{
-		int i = 0;
 		
-		RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup1);
+//		int i = 0;
+//		
+//		RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup1);
+//		
+//		if(r == null)
+//		{
+//			LinearLayout lView = new LinearLayout(this);
+//			TextView myText = new TextView(this);
+//			myText.setText("something's wrong");
+//
+//			lView.addView(myText);
+//
+//			setContentView(lView);
+//			return;
+//		}
+//		
+//		if(r.getCheckedRadioButtonId() == 0)
+//			i++;
+//		r = (RadioGroup) findViewById(R.id.radioGroup2);
+//		if(r.getCheckedRadioButtonId() == 0)
+//			i++;
+//		r = (RadioGroup) findViewById(R.id.radioGroup3);
+//		if(r.getCheckedRadioButtonId() == 0)
+//			i++;
+//		
+//		LinearLayout lView = new LinearLayout(this);
+//
+//		TextView myText = new TextView(this);
+//		myText.setText(String.valueOf(i) + "/3");
+//
+//		lView.addView(myText);
+//
+//		setContentView(lView);
 		
-		if(r == null)
-		{
-			LinearLayout lView = new LinearLayout(this);
-			TextView myText = new TextView(this);
-			myText.setText("something's wrong");
-
-			lView.addView(myText);
-
-			setContentView(lView);
-			return;
-		}
+		Intent intent = new Intent(this, ScoringActivity.class);
 		
-		if(r.getCheckedRadioButtonId() == 0)
-			i++;
-		r = (RadioGroup) findViewById(R.id.radioGroup2);
-		if(r.getCheckedRadioButtonId() == 0)
-			i++;
-		r = (RadioGroup) findViewById(R.id.radioGroup3);
-		if(r.getCheckedRadioButtonId() == 0)
-			i++;
-		
-		LinearLayout lView = new LinearLayout(this);
-
-		TextView myText = new TextView(this);
-		myText.setText(String.valueOf(i) + "/3");
-
-		lView.addView(myText);
-
-		setContentView(lView);
+		startActivity(intent);
 	}
 
 }
