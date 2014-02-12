@@ -15,8 +15,7 @@ public class ScoringActivity extends Activity {
 		setContentView(R.layout.activity_scoring);
 		
 		int i = 0;
-		LinearLayout lView = new LinearLayout(this);
-		setContentView(lView);
+		
 		RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup1);
 		
 		if(r.getCheckedRadioButtonId() == 0)
@@ -29,7 +28,7 @@ public class ScoringActivity extends Activity {
 			i++;
 		
 		
-
+		LinearLayout lView = new LinearLayout(this);
 		TextView myText = new TextView(this);
 		myText.setText(String.valueOf(i) + "/3");
 

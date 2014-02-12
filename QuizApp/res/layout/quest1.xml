@@ -54,6 +54,6 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:text="NEXT"
-        android:onClick="displayQuestions2" />
+        android:onClick="calculateQuestions" />
 
 </RelativeLayout>

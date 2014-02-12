@@ -11,7 +11,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
+	
+	private int i = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,6 +48,45 @@ public class MainActivity extends Activity {
 	public void displayQuestions3(View view)
 	{
 		setContentView(R.layout.quest3);
+	}
+	
+	public void calculateQuestions(View view)
+	{
+		RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup1);
+		if(r.getCheckedRadioButtonId() == R.id.radio0)
+			i++;
+		
+		displayQuestions2(view);
+	}
+	
+	public void calculateQuestions2(View view)
+	{
+		RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup2);
+		if(r.getCheckedRadioButtonId() == R.id.radio3)
+			i++;
+		
+		displayQuestions3(view);
+	}
+	
+	public void calculateQuestions3(View view)
+	{
+		//setContentView(R.layout.quest3);
+		RadioGroup r = (RadioGroup) findViewById(R.id.radioGroup3);
+		if(r.getCheckedRadioButtonId() == R.id.radio6)
+			i++;
+		
+		displayScore(view);
+	}
+	
+	public void displayScore(View view)
+	{
+		LinearLayout lView = new LinearLayout(this);
+		
+		TextView myText = new TextView(this);
+		myText.setText(String.valueOf(i) + "/3");
+		
+		lView.addView(myText);
+		setContentView(lView);
 	}
 	
 	public void testResults(View view)
